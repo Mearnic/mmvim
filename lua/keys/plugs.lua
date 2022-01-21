@@ -9,6 +9,12 @@ local opt = {
    silent = true
 }
 
-map('n', '<A-e>', ':NvimTreeToggle<CR>', opt)
+map('n', '<LEADER>e', ':NvimTreeToggle<CR><C-w>p', opt)
+map('n', '<A-r>', ':NvimTreeRefresh<CR>', opt)
+map('n', '<A-e>', ':NvimTreeFindFile<CR>', opt)
+-- nnoremap <leader>e :NvimTreeToggle<CR><C-w>p
+-- nnoremap <A-r> :NvimTreeRefresh<CR>
+-- nnoremap <A-e> :NvimTreeFindFile<CR>
+
 
 map('v', 'Y', '\"+y', opt)
