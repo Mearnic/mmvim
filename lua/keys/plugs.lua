@@ -11,3 +11,4 @@ local opt = {
 
 map('n', '<A-e>', ':NvimTreeToggle<CR>', opt)
 
+map('v', 'Y', '\"+y', opt)
