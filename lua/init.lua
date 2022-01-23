@@ -5,3 +5,5 @@ require('config/bufferline')
 require('config/lualine')
 
 require('keys/plugs')
+
+require('lsp/setup')
