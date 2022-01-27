@@ -1,9 +1,6 @@
-require('plugins')
+require('config/plugins')
+local keys = require('config/keys')
+require('config/config')
 
-require('config/nvimtree')
-require('config/bufferline')
-require('config/lualine')
 
-require('keys/plugs')
-
-require('lsp/setup')
+keys.load_defaults()
