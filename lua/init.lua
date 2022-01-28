@@ -1,6 +1,9 @@
 require('config/plugins')
-local keys = require('config/keys')
+require('config/plugins/bufferline')
+require('config/plugins/lualine')
+require('config/plugins/nvimtree')
+
 require('config/config')
 
-
+local keys = require('config/keys')
 keys.load_defaults()

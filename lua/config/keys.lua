@@ -35,11 +35,6 @@ local generic_opts = {
 }
 
 local defaults = {
-	--map('c', '<C-a>', '<HOME>', opt)
-	--map('c', '<C-e>', '<END>', opt)
-	--
-	--
-	--
 	normal_mode= {
 		['H']='M',
 		['J']='5j',
@@ -63,6 +58,10 @@ local defaults = {
 		[';']=':',
 		['<C-s>']=':w<CR>',
 		['<C-q>']=':q<CR>',
+
+		['<LEADER>e']= ':NvimTreeToggle<CR><C-w>p',
+		['<A-r>']= ':NvimTreeFindFile<CR>',
+		['®']= ':NvimTreeFindFile<CR>',
 	},
 
 	insert_mode = {
@@ -76,17 +75,28 @@ local defaults = {
 		['<C-e>']='<END>',
 	},
 	visual_mode = {
-	--map('v', '<C-s>', '<ESC>:w<CR>', opt)
-	--map('v', 'Y', '"+y', opt)
-	--map('v', '*', ':normal gv"+y<CR>/\\V<C-r>"<CR>', opt)
+		['H']='M',
+		['J']='5j',
+		['K']='5k',
+		['L']='zz',
+		['<C-s>']= '<ESC>:w<CR>', 
+		['Y']= '"+y', 
+		['*']= ':normal gv"+y<CR>/\\V<C-r>"<CR>',
 	},
 
 	visual_block_mode = {
-	['<C-s>', '<ESC>:w<CR>', opt)
-	['Y', '"+y', opt)
-	['*', ':normal gv"+y<CR>/\\V<C-r>"<CR>', opt)
+		['H']='M',
+		['J']='5j',
+		['K']='5k',
+		['L']='zz',
+		['<C-s>']='<ESC>:w<CR>',
+		['Y']='"+y',
+		['*']=':normal gv"+y<CR>/\\V<C-r>"<CR>',
 	},
-
+	command_mode = {
+		['<C-a>']='<HOME>',
+		['<C-e>']='<END>',
+	}
 }
 
 function M.load_defaults()
@@ -106,8 +116,6 @@ end
 function M.set_mapping(mode_type, mode, key, val)
 	if val then
 		map(mode_type, key, val, generic_opts[mode])
---		print(mode_type .. ' ' .. key .. ' ' .. val .. ' ' .. mode)
---		print(generic_opts[mode])
 	else
 		dmap(mode, key)
 	end
