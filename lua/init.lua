@@ -1,7 +1,8 @@
+
+require('core/init')
+
 require('config/plugins')
-require('config/plugins/bufferline')
-require('config/plugins/lualine')
-require('config/plugins/nvimtree')
+
 
 require('config/config')
 
